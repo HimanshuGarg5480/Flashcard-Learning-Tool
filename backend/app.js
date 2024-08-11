@@ -1,6 +1,5 @@
 import express from "express";
 import cors from "cors"
-import Flashcard from "./model/flashcard.model.js";
 import { createCard, deleteCard, getAllCards, updateCard } from "./controllers/flashcard.js";
 
 const app = express();

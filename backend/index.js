@@ -1,5 +1,8 @@
 import sequelize from "./db/index.js";
 import app from "./app.js";
+import dotenv from "dotenv"
+
+dotenv.config()
 
 // Sync database
 sequelize.sync().then(() => {
