@@ -8,7 +8,7 @@ const FlashcardList = () => {
   const [flippedStates, setFlippedStates] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/flashcards')
+    axios.get('https://flashcard-learning-tool-1.onrender.com/api/flashcards')
         .then(response => {
           setFlashcards(response.data);
           setFlippedStates(new Array(response.data.length).fill(false)); // Initialize flip states

@@ -14,14 +14,14 @@ const Dashboard = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/flashcards`)
+      .get(`https://flashcard-learning-tool-1.onrender.com/api/flashcards`)
       .then((response) => setFlashcards(response.data))
       .catch((error) => console.error("Error fetching flashcards:", error));
   }, []);
 
   const handleAddOrUpdate = () => {
     axios
-      .post(`http://localhost:5000/api/flashcards`, newFlashcard)
+      .post(`https://flashcard-learning-tool-1.onrender.com/api/flashcards`, newFlashcard)
       .then((response) => {
         setFlashcards([...flashcards, response.data]);
         setNewFlashcard({ question: "", answer: "" });
@@ -31,7 +31,7 @@ const Dashboard = () => {
 
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:5000/api/flashcards/${id}`)
+      .delete(`https://flashcard-learning-tool-1.onrender.com/api/flashcards/${id}`)
       .then(() => setFlashcards(flashcards.filter((fc) => fc.id !== id)))
       .catch((error) => console.error("Error deleting flashcard:", error));
   };
@@ -90,7 +90,7 @@ const Dashboard = () => {
           {flashcards.map((fc) => (
             <li
               key={fc.id}
-              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow flex justify-between items-start"
+              className="bg-white dark:bg-gray-800 p-6 h-fit rounded-lg shadow-lg hover:shadow-xl transition-shadow flex justify-between items-start"
             >
               <div>
                 <h3 className="text-xl font-semibold text-blue-700 dark:text-blue-300 mb-2">

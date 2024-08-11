@@ -7,7 +7,7 @@ const EditModal = ({question, answer, id, setModalOpen,flashcards,setFlashcards,
 
     const handleEdit = ()=>{
         axios
-        .put(`http://localhost:5000/api/flashcards/${id}`, {"question":questionInput,"answer":answerInput})
+        .put(`https://flashcard-learning-tool-1.onrender.com/api/flashcards/${id}`, {"question":questionInput,"answer":answerInput})
         .then((response) => {
           setFlashcards(
             flashcards.map((fc) => (fc.id === id ? response.data : fc))
